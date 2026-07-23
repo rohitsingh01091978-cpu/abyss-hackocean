@@ -23,9 +23,9 @@ function Navbar() {
         </ul>
 
         {/* Desktop Button */}
-        <button className="hidden md:block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-2 rounded-full transition-colors">
+        <Link to="/contact" className="hidden md:block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-2 rounded-full transition-colors">
           Book Now
-        </button>
+        </Link>
 
         {/* Mobile Hamburger Icon */}
         <button 
@@ -44,9 +44,9 @@ function Navbar() {
           <Link to="/" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-cyan-400">About</Link>
           <Link to="/" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-cyan-400">Packages</Link>
           <Link to="/contact" onClick={() => setIsOpen(false)} className="text-slate-300 hover:text-cyan-400">Contact</Link>
-          <button className="bg-cyan-500 text-slate-900 font-semibold px-5 py-2 rounded-full">
+          <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-cyan-500 text-slate-900 font-semibold px-5 py-2 rounded-full text-center">
             Book Now
-          </button>
+          </Link>
         </div>
       )}
     </nav>

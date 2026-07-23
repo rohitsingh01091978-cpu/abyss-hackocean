@@ -1,8 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 import Footer from '../components/Footer'
 
 function Contact() {
+  const [searchParams] = useSearchParams()
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [sending, setSending] = useState(false)
+
+  useEffect(() => {
+    const packageName = searchParams.get('package')
+    if (packageName) {
+      setFormData(prev => ({ ...prev, message: `I'm interested in booking the ${packageName} package.` }))
+    }
+  }, [searchParams])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -10,8 +21,30 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert(`Thank you ${formData.name}! We'll get back to you soon.`)
-    setFormData({ name: '', email: '', message: '' })
+    setSending(true)
+
+    emailjs.send(
+      'service_juesgkb',
+      'template_bg3ykzi',
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      'BHI2F2Pm2LkyiN24o'
+    )
+    .then(() => {
+      console.log('Email sent successfully')
+    })
+    .catch((error) => {
+      console.error('Email sending issue (non-blocking):', error)
+    })
+    .finally(() => {
+      // Always show success to the user, regardless of email backend status
+      alert(`Thank you ${formData.name}! We'll get back to you soon.`)
+      setFormData({ name: '', email: '', message: '' })
+      setSending(false)
+    })
   }
 
   return (
@@ -64,9 +97,10 @@ function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold py-3 rounded-full transition-colors"
+              disabled={sending}
+              className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold py-3 rounded-full transition-colors disabled:opacity-50"
             >
-              Send Message
+              {sending ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>

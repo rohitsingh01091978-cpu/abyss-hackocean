@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
@@ -54,12 +55,12 @@ function Hero() {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="flex gap-4 justify-center flex-wrap"
         >
-          <button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors">
+          <Link to="/contact" className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors">
             Book Your Expedition
-          </button>
-          <button className="border border-slate-400 hover:border-cyan-400 text-white px-8 py-3 rounded-full transition-colors">
+          </Link>
+          <a href="#packages" className="border border-slate-400 hover:border-cyan-400 text-white px-8 py-3 rounded-full transition-colors">
             Learn More
-          </button>
+          </a>
         </motion.div>
 
       </div>

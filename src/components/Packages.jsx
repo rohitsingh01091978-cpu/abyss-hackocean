@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const packages = [
   {
@@ -25,8 +26,10 @@ const packages = [
 ]
 
 function Packages() {
+  const navigate = useNavigate()
+
   return (
-    <section className="bg-slate-900 py-24 px-6">
+    <section id="packages" className="bg-slate-900 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         
         <motion.div
@@ -67,7 +70,10 @@ function Packages() {
                 <p className="text-cyan-400 text-3xl font-bold mb-4">{pkg.price}</p>
                 <p className="text-slate-400 mb-6">{pkg.desc}</p>
                 <p className="text-slate-500 text-sm mb-6">⏱ Duration: {pkg.duration}</p>
-                <button className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold py-3 rounded-full transition-colors">
+                <button 
+                  onClick={() => navigate(`/contact?package=${pkg.title}`)}
+                  className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold py-3 rounded-full transition-colors"
+                >
                   Select Package
                 </button>
               </div>
