@@ -3,9 +3,13 @@ function About() {
     <section className="bg-slate-950 py-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         
-        {/* Left side - Image placeholder */}
-        <div className="bg-gradient-to-br from-cyan-900/40 to-slate-800 rounded-2xl h-96 flex items-center justify-center border border-slate-800">
-          <span className="text-slate-500 text-lg">Submarine Image Yahan Aayegi</span>
+        {/* Left side - Actual Image */}
+        <div className="rounded-2xl h-96 overflow-hidden border border-slate-800">
+          <img 
+            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" 
+            alt="ABYSS Deep Sea Exploration"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Right side - Text content */}
