@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const packages = [
   {
     title: "Coral Explorer",
@@ -27,24 +29,31 @@ function Packages() {
     <section className="bg-slate-900 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         
-        {/* Section Heading */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <p className="text-cyan-400 font-semibold tracking-widest uppercase mb-4">
             Our Packages
           </p>
           <h2 className="text-4xl font-bold text-white">
             Choose Your Expedition
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Cards Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               className="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden hover:border-cyan-400 hover:-translate-y-2 transition-all duration-300"
             >
-              {/* Image */}
               <div className="h-48 overflow-hidden">
                 <img 
                   src={pkg.image} 
@@ -53,7 +62,6 @@ function Packages() {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-white mb-2">{pkg.title}</h3>
                 <p className="text-cyan-400 text-3xl font-bold mb-4">{pkg.price}</p>
@@ -63,7 +71,7 @@ function Packages() {
                   Select Package
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

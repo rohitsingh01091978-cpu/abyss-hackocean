@@ -1,19 +1,30 @@
+import { motion } from 'framer-motion'
+
 function About() {
   return (
     <section className="bg-slate-950 py-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         
-        {/* Left side - Actual Image */}
-        <div className="rounded-2xl h-96 overflow-hidden border border-slate-800">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="rounded-2xl h-96 overflow-hidden border border-slate-800"
+        >
           <img 
             src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" 
             alt="ABYSS Deep Sea Exploration"
             className="w-full h-full object-cover"
           />
-        </div>
+        </motion.div>
 
-        {/* Right side - Text content */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+        >
           <p className="text-cyan-400 font-semibold tracking-widest uppercase mb-4">
             About ABYSS
           </p>
@@ -26,7 +37,6 @@ function About() {
             guides, we take you where few have ever been.
           </p>
 
-          {/* Stats */}
           <div className="grid grid-cols-3 gap-6 mt-10">
             <div>
               <h3 className="text-3xl font-bold text-cyan-400">500+</h3>
@@ -41,7 +51,7 @@ function About() {
               <p className="text-slate-400 text-sm mt-1">Safety Record</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
