@@ -1,16 +1,66 @@
-# React + Vite
+# 🌊 ABYSS — Deep Sea Exploration Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive landing page for a fictional deep-sea exploration company, built as part of the **HackOcean National-Level Frontend Hackathon**.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://abyss-hackocean.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Preview
 
-## React Compiler
+A dark, immersive "deep ocean" themed landing page with smooth animations and a fully responsive design.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Responsive Multi-Page Design** — Home and Contact pages with smooth client-side routing
+- **Animated UI** — Framer Motion powers fade-in and hover animations throughout
+- **Mobile-First Navigation** — Custom hamburger menu for mobile devices
+- **Interactive Contact Form** — Controlled form with validation and submission feedback
+- **Component-Based Architecture** — Clean, reusable React components
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React.js | UI library |
+| Vite | Build tool & dev server |
+| Tailwind CSS | Utility-first styling |
+| Framer Motion | Animations |
+| React Router DOM | Client-side routing |
+
+## 📂 Project Structure
+
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Packages.jsx
+│   └── Footer.jsx
+├── pages/
+│   ├── Home.jsx
+│   └── Contact.jsx
+├── App.jsx
+└── main.jsx
+
+## 🚀 Getting Started
+
+Clone the repository and install dependencies:
+
+git clone https://github.com/rohitsingh01091978-cpu/abyss-hackocean.git
+cd abyss-hackocean
+npm install
+npm run dev
+
+The app will run on http://localhost:5173
+
+## 🎨 Design Approach
+
+The design uses a dark navy color palette with glowing cyan accents to visually represent the "deep ocean" theme, paired with clear trust-building elements (safety stats, package comparisons) suited for a premium adventure travel brand.
+
+## 👩‍💻 Author
+
+**Kritika Singh**  
+[LinkedIn](https://www.linkedin.com/in/kritika-singh-027641338) • [GitHub](https://github.com/rohitsingh01091978-cpu)
+
+---
+
+Built with 💙 for HackOcean 2026
