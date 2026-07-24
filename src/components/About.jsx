@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 function About() {
   return (
-    <section className="bg-slate-950 py-24 px-6">
+    <section id="about" className="bg-slate-950 py-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         
         <motion.div
@@ -37,7 +38,7 @@ function About() {
             guides, we take you where few have ever been.
           </p>
 
-          <div className="grid grid-cols-3 gap-6 mt-10">
+          <div className="grid grid-cols-3 gap-6 mt-10 mb-10">
             <div>
               <h3 className="text-3xl font-bold text-cyan-400">500+</h3>
               <p className="text-slate-400 text-sm mt-1">Expeditions</p>
@@ -51,6 +52,13 @@ function About() {
               <p className="text-slate-400 text-sm mt-1">Safety Record</p>
             </div>
           </div>
+
+          <Link 
+            to="/contact" 
+            className="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors"
+          >
+            Book Your Expedition
+          </Link>
         </motion.div>
 
       </div>
